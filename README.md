@@ -255,11 +255,11 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
   const pre=win.document.createElement("pre");
   pre.textContent=message;
   pre.style.whiteSpace="pre-wrap";
-  pre.style.padding="20px";
+  pre.style.padding="200px";
   win.document.body.appendChild(pre);
   const copy=win.document.createElement("button");
   copy.textContent="Αντιγραφή παραγγελίας";
-  copy.style.padding="155px";
+  copy.style.padding="15px";
   copy.onclick=()=>navigator.clipboard.writeText(message);
   win.document.body.appendChild(copy);
  }else{
