@@ -57,7 +57,7 @@ footer{background:#29211c;color:white;text-align:center;padding:25px;line-height
 <body>
 
 <header>
-<img src="logo-nefeli.jpg" alt="Λογότυπο ΝΕΦΕΛΗ">
+<img src="FB_IMG_1792954368125.jpg" alt="Λογότυπο ΝΕΦΕΛΗ">
 <h1>ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ</h1>
 <p>Καλώς ήρθατε!</p>
 </header>
