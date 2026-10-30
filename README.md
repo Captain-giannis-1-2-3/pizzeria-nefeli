@@ -34,7 +34,7 @@ footer{background:#29211c;color:white;text-align:center;padding:25px;line-height
 <header>
 <img src="FB_IMG_1792954368125.jpg" alt="Λογότυπο ΝΕΦΕΛΗ">
 <h1>ΠΙΤΣΑΡΙΑ Καφέ ΝΕΦΕΛΗ</h1>
-<p>Καλώς ήρθατε! η αριθμη τηλεφώνου είναι για να κλείσετε τραπέζης στο μαγαζί</p>
+<p>Καλώς ήρθατε! η αριθμη τηλεφώνου είναι για να κλείσετε τραπέζης στο μαγαζί </p>
 </header>
 
 <div class="offer">🍕 4+1 ΔΩΡΟ </div>
