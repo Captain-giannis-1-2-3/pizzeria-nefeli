@@ -8,40 +8,33 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#fff8ef;color:#29231f}
-header{background:#941d24;color:white;text-align:center;padding:28px 15px}
-header h1{font-size:38px;margin:8px}
-header p{margin:7px}
+header{background:#000;text-align:center;padding:12px}
+.logo{width:100%;max-width:600px;height:auto;display:block;margin:auto}
 .offer{background:#ffca55;text-align:center;padding:14px;font-weight:bold}
-nav{display:flex;gap:8px;overflow-x:auto;padding:12px;background:#29231f}
-nav a{color:white;text-decoration:none;white-space:nowrap;padding:8px}
+nav{display:flex;gap:15px;overflow-x:auto;background:#29231f;padding:14px}
+nav a{color:white;text-decoration:none;white-space:nowrap}
 main{max-width:850px;margin:auto;padding:15px}
 h2{color:#941d24;border-bottom:2px solid #941d24;padding-bottom:9px;margin-top:30px}
-.item{background:white;border-radius:12px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}
+.item,.cart,.order{background:white;border-radius:12px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}
 .item h3{margin:0 0 7px}
 .desc{font-size:14px;color:#69615b;line-height:1.5}
 .price{font-weight:bold;color:#941d24;margin-top:9px}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-button{border:0;border-radius:8px;background:#941d24;color:white;padding:11px 14px;font-weight:bold;cursor:pointer}
-button:active{opacity:.8}
+button{border:0;border-radius:8px;background:#941d24;color:white;padding:11px;font-weight:bold;cursor:pointer}
 .actions button{flex:1}
-.cart,.order{background:white;border-radius:12px;padding:16px;margin:25px 0}
-.cart-row{display:flex;justify-content:space-between;gap:10px;margin:12px 0;border-bottom:1px solid #eee;padding-bottom:8px}
-.remove{background:#555;padding:6px 10px}
-.total{font-size:22px;font-weight:bold}
 input,select,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #ccc;border-radius:7px;font-size:16px}
+.total{font-size:22px;font-weight:bold}
 .submit{width:100%;background:#287844;font-size:17px}
+.remove{background:#555}
+.cart-row{display:flex;justify-content:space-between;gap:10px;margin:12px 0;border-bottom:1px solid #eee;padding-bottom:8px}
 footer{background:#29231f;color:white;text-align:center;padding:25px;line-height:2}
 footer a{color:white}
-.small{font-size:13px;color:#777}
 </style>
 </head>
 <body>
 
 <header>
-<div style="font-size:42px">🍕</div>
-<h1>ΝΕΦΕΛΗ</h1>
-<p>ΠΙΤΣΑΡΙΑ</p>
-<p>☎ 26810 88719 | 6971618144</p>
+<img src="logo-nefeli.jpg" class="logo" alt="Πιτσαρία ΝΕΦΕΛΗ">
 </header>
 
 <div class="offer">🎉 4+1 ΔΩΡΕΑΝ ΣΕ ΟΛΕΣ ΤΙΣ ΠΙΤΣΕΣ!</div>
@@ -57,37 +50,26 @@ footer a{color:white}
 </nav>
 
 <main>
-<div id="pizzas">
-<h2>🍕 Πίτσες – Καλτσόνε – Πεϊνερλί</h2>
-<p>Όλες οι παρακάτω γεύσεις διατίθενται και ως καλτσόνε ή πεϊνερλί.</p>
+
+<h2 id="pizzas">🍕 Πίτσες – Καλτσόνε – Πεϊνερλί</h2>
+<p>Όλες οι γεύσεις διατίθενται και ως καλτσόνε ή πεϊνερλί.</p>
 <div id="pizzaList"></div>
-</div>
 
-<div id="salads">
-<h2>🥗 Σαλάτες</h2>
+<h2 id="salads">🥗 Σαλάτες</h2>
 <div id="saladList"></div>
-</div>
 
-<div id="pasta">
-<h2>🍝 Μακαρονάδες</h2>
-<p class="small">Όλες οι μακαρονάδες διατίθενται και στον φούρνο.</p>
+<h2 id="pasta">🍝 Μακαρονάδες</h2>
+<p>Όλες οι μακαρονάδες διατίθενται και στον φούρνο.</p>
 <div id="pastaList"></div>
-</div>
 
-<div id="starters">
-<h2>🍟 Ορεκτικά – Μερίδες</h2>
+<h2 id="starters">🍟 Ορεκτικά – Μερίδες</h2>
 <div id="starterList"></div>
-</div>
 
-<div id="drinks">
-<h2>🥤 Αναψυκτικά</h2>
+<h2 id="drinks">🥤 Αναψυκτικά</h2>
 <div id="drinkList"></div>
-</div>
 
-<div id="beers">
-<h2>🍺 Μπύρες</h2>
+<h2 id="beers">🍺 Μπύρες</h2>
 <div id="beerList"></div>
-</div>
 
 <section class="cart" id="cart">
 <h2>🛒 Το καλάθι σου</h2>
@@ -100,12 +82,12 @@ footer a{color:white}
 <h2>📝 Παραγγελία</h2>
 <form id="orderForm">
 <label>Ονοματεπώνυμο</label>
-<input id="customer" required placeholder="Το όνομά σου">
+<input id="customer" required>
 
 <label>Τηλέφωνο</label>
-<input id="phone" type="tel" required placeholder="Το τηλέφωνό σου">
+<input id="phone" type="tel" required>
 
-<label>Παραλαβή</label>
+<label>Τρόπος παραλαβής</label>
 <select id="delivery">
 <option value="Παραλαβή από το κατάστημα">Παραλαβή από το κατάστημα</option>
 <option value="Delivery">Delivery</option>
@@ -113,17 +95,17 @@ footer a{color:white}
 
 <div id="addressBox" hidden>
 <label>Διεύθυνση παράδοσης</label>
-<input id="address" placeholder="Οδός, αριθμός, περιοχή">
+<input id="address">
 </div>
 
-<label>Τρόπος πληρωμής</label>
+<label>Πληρωμή</label>
 <select id="payment">
 <option>Μετρητά</option>
 <option>Κάρτα κατά την παραλαβή</option>
 </select>
 
 <label>Σχόλια</label>
-<textarea id="notes" rows="3" placeholder="Σημειώσεις για την παραγγελία"></textarea>
+<textarea id="notes" rows="3"></textarea>
 
 <button class="submit" type="submit">Ολοκλήρωση παραγγελίας</button>
 <p id="message"></p>
@@ -133,10 +115,8 @@ footer a{color:white}
 
 <footer>
 <strong>ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ</strong><br>
-Τηλέφωνο:
-<a href="tel:2681088719">26810 88719</a><br>
-Κινητό:
-<a href="tel:6971618144">6971618144</a><br>
+<a href="tel:2681088719">☎ 26810 88719</a><br>
+<a href="tel:6971618144">☎ 6971618144</a><br>
 Συκούλα, Αιτωλοακαρνανίας
 </footer>
 
@@ -201,100 +181,63 @@ const beers=[
 ];
 
 let cart=[];
-
-const money=n=>n.toLocaleString("el-GR",{
- minimumFractionDigits:2,maximumFractionDigits:2
-})+" €";
+const money=n=>n.toLocaleString("el-GR",{minimumFractionDigits:2,maximumFractionDigits:2})+" €";
 
 function showPizzas(){
  document.getElementById("pizzaList").innerHTML=pizzas.map((p,i)=>`
  <article class="item">
  <h3>${p[0]}</h3><div class="desc">${p[1]}</div>
+ ${["Πίτσα","Καλτσόνε","Πεϊνερλί"].map(type=>`
  <div class="actions">
- <button onclick="addPizza(${i},0,'Πίτσα')">Πίτσα Ατομική ${money(p[2])}</button>
- <button onclick="addPizza(${i},1,'Πίτσα')">Πίτσα Οικογενειακή ${money(p[3])}</button>
- </div>
- <div class="actions">
- <button onclick="addPizza(${i},0,'Καλτσόνε')">Καλτσόνε Ατομικό ${money(p[2])}</button>
- <button onclick="addPizza(${i},1,'Καλτσόνε')">Καλτσόνε Οικογενειακό ${money(p[3])}</button>
- </div>
- <div class="actions">
- <button onclick="addPizza(${i},0,'Πεϊνερλί')">Πεϊνερλί Ατομικό ${money(p[2])}</button>
- <button onclick="addPizza(${i},1,'Πεϊνερλί')">Πεϊνερλί Οικογενειακό ${money(p[3])}</button>
- </div>
+ <button onclick="addPizza(${i},0,'${type}')">${type} Ατομική ${money(p[2])}</button>
+ <button onclick="addPizza(${i},1,'${type}')">${type} Οικογενειακή ${money(p[3])}</button>
+ </div>`).join("")}
  </article>`).join("");
 }
 
 function showSimple(list,id){
  document.getElementById(id).innerHTML=list.map((p,i)=>`
  <article class="item">
- <h3>${p[0]}</h3>
- <div class="desc">${p[1]||""}</div>
+ <h3>${p[0]}</h3><div class="desc">${p[1]||""}</div>
  <div class="price">${money(p[2])}</div>
- <div class="actions"><button onclick="addSimple('${id}',${i})">Προσθήκη</button></div>
+ <button onclick="addSimple('${id}',${i})">Προσθήκη</button>
  </article>`).join("");
 }
 
 function showDrinks(list,id){
  document.getElementById(id).innerHTML=list.map((p,i)=>`
  <article class="item">
- <h3>${p[0]}</h3>
- <div class="price">${money(p[1])}</div>
- <div class="actions"><button onclick="addDrink('${id}',${i})">Προσθήκη</button></div>
+ <h3>${p[0]}</h3><div class="price">${money(p[1])}</div>
+ <button onclick="addDrink('${id}',${i})">Προσθήκη</button>
  </article>`).join("");
 }
 
 function addPizza(i,size,type){
- cart.push({
- name:type+" "+pizzas[i][0],
- size:size===0?"Ατομικό":"Οικογενειακό",
- price:pizzas[i][size+2],
- pizza:true
- });
+ cart.push({name:type+" "+pizzas[i][0],size:size===0?"Ατομικό":"Οικογενειακό",price:pizzas[i][size+2],pizza:true});
  renderCart();
 }
-
 function addSimple(id,i){
- const list=id==="saladList"?salads:
- id==="pastaList"?pastas:starters;
- cart.push({name:list[i][0],size:"",price:list[i][2],pizza:false});
+ const list=id==="saladList"?salads:id==="pastaList"?pastas:starters;
+ cart.push({name:list[i][0],price:list[i][2],pizza:false});
  renderCart();
 }
-
 function addDrink(id,i){
  const list=id==="drinkList"?drinks:beers;
- cart.push({name:list[i][0],size:"",price:list[i][1],pizza:false});
+ cart.push({name:list[i][0],price:list[i][1],pizza:false});
  renderCart();
 }
+function removeItem(i){cart.splice(i,1);renderCart()}
 
 function renderCart(){
- let pizzaCount=0,total=0,freeCount=0;
- const rows=cart.map((item,i)=>{
-   let free=false;
-   if(item.pizza){
-     pizzaCount++;
-     free=pizzaCount%5===0;
-   }
-   if(free)freeCount++;
-   else total+=item.price;
-   return `<div class="cart-row">
-     <span>${item.name} ${item.size}
-     — ${free?"🎁 ΔΩΡΕΑΝ":money(item.price)}</span>
-     <button class="remove" onclick="removeItem(${i})">✕</button>
-   </div>`;
+ let pizzaNumber=0,total=0,free=0;
+ const html=cart.map((x,i)=>{
+  const isFree=x.pizza && (++pizzaNumber%5===0);
+  if(isFree)free++;else total+=x.price;
+  return `<div class="cart-row"><span>${x.name} ${x.size||""} — ${isFree?"🎁 ΔΩΡΕΑΝ":money(x.price)}</span><button class="remove" onclick="removeItem(${i})">✕</button></div>`;
  }).join("");
-
- document.getElementById("cartItems").innerHTML=
- rows||"Το καλάθι είναι άδειο.";
+ document.getElementById("cartItems").innerHTML=html||"Το καλάθι είναι άδειο.";
  document.getElementById("total").textContent=money(total);
- document.getElementById("promoMessage").textContent=
- freeCount?"🎉 Εφαρμόστηκε η προσφορά 4+1!":
- "Η προσφορά εφαρμόζεται σε κάθε 5 πίτσες. Δεν αφορά άλλα προϊόντα.";
-}
-
-function removeItem(i){
- cart.splice(i,1);
- renderCart();
+ document.getElementById("promoMessage").textContent=free?"🎉 Εφαρμόστηκε η προσφορά 4+1!":"Η προσφορά ισχύει μόνο στις πίτσες.";
 }
 
 showPizzas();
@@ -303,7 +246,6 @@ showSimple(pastas,"pastaList");
 showSimple(starters,"starterList");
 showDrinks(drinks,"drinkList");
 showDrinks(beers,"beerList");
-renderCart();
 
 document.getElementById("delivery").addEventListener("change",e=>{
  const yes=e.target.value==="Delivery";
@@ -313,15 +255,12 @@ document.getElementById("delivery").addEventListener("change",e=>{
 
 document.getElementById("orderForm").addEventListener("submit",e=>{
  e.preventDefault();
- if(!cart.length){
-  document.getElementById("message").textContent=
-  "Πρόσθεσε πρώτα προϊόντα στο καλάθι.";
-  return;
- }
- document.getElementById("message").textContent=
- "Η φόρμα είναι δοκιμαστική. Η παραγγελία δεν έχει σταλεί στο κατάστημα. Χρειάζεται σύνδεση με ασφαλές σύστημα παραγγελιών.";
+ if(!cart.length){document.getElementById("message").textContent="Πρόσθεσε πρώτα προϊόντα στο καλάθι.";return}
+ document.getElementById("message").textContent="Η φόρμα είναι δοκιμαστική. Δεν έχει σταλεί ακόμη πραγματική παραγγελία. Χρειάζεται σύνδεση με ασφαλές σύστημα παραγγελιών.";
 });
+renderCart();
 </script>
 </body>
 </html>
+
 
