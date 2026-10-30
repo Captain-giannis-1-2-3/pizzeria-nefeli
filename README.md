@@ -25,7 +25,7 @@ textarea{min-height:70px}
 .item span{flex:1}
 .remove{background:#555}
 .total{font-size:21px;font-weight:bold;margin:16px 0}
-.submit{width:100%;background:#218838;padding:14px;font-size:17px}
+.submit{width:150%;background:#218838;padding:14px;font-size:17px}
 footer{background:#29211c;color:white;text-align:center;padding:25px;line-height:1.8;margin-top:30px}
 </style>
 </head>
