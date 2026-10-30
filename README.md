@@ -216,7 +216,7 @@ function drawCart(){
  document.getElementById("promoInfo").textContent=
   "Κανονικές πίτσες: "+cart.filter(x=>x.eligible).length+
   " · Δωρεάν πίτσες: "+free.length+
-  ". Η προσφορά δεν ισχύει για καλτσόνε ή πεϊνερλί.";
+  ". Η προσφορά  ισχύει για καλτσόνε και πεϊνερλί.";
 }
 
 renderSimple(salads,"salads","Σαλάτα");
