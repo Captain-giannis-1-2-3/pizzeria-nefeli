@@ -57,7 +57,7 @@ footer a{color:white}
 <body>
 
 <header>
-<img src="logo-nefeli.jpg" class="logo" alt="Πιτσαρία ΝΕΦΕΛΗ">
+<img src="FB_IMG_1792954368125.jpg" class="logo" alt="Πιτσαρία ΝΕΦΕΛΗ">
 </header>
 
 <div class="offer">🎉 4+1 ΔΩΡΕΑΝ ΣΕ ΟΛΕΣ ΤΙΣ ΠΙΤΣΕΣ!</div>
