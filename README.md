@@ -7,147 +7,112 @@
 <title>Πιτσαρία ΝΕΦΕΛΗ</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#fff8ef;color:#29231f}
-header{background:#000;text-align:center;padding:12px}
-.logo{width:100%;max-width:600px;height:auto;display:block;margin:auto}
-.offer{background:#ffca55;text-align:center;padding:14px;font-weight:bold}
-nav{display:flex;gap:15px;overflow-x:auto;background:#29231f;padding:14px}
-nav a{color:white;text-decoration:none;white-space:nowrap}
+body{margin:0;background:#fff8ef;color:#29211c;font-family:Arial,sans-serif}
+header{background:#8d1717;color:white;text-align:center;padding:22px}
+header img{width:145px;max-height:125px;object-fit:contain;background:white;padding:5px;border-radius:10px}
+header h1{margin:12px 0 5px}
+.offer{background:#ffcf45;text-align:center;padding:14px;font-weight:bold;font-size:19px}
 main{max-width:850px;margin:auto;padding:15px}
-h2{color:#941d24;border-bottom:2px solid #941d24;padding-bottom:9px;margin-top:30px}
-.item,.cart,.order{background:white;border-radius:12px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}
-.item h3{margin:0 0 7px}
-.desc{font-size:14px;color:#69615b;line-height:1.5}
-.price{font-weight:bold;color:#941d24;margin-top:9px}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-button{border:0;border-radius:8px;background:#941d24;color:white;padding:11px;font-weight:bold;cursor:pointer}
-.actions button{flex:1}
-input,select,textarea{width:100%;padding:12px;margin:7px 0 14px;border:1px solid #ccc;border-radius:7px;font-size:16px}
-.total{font-size:22px;font-weight:bold}
-.submit{width:100%;background:#287844;font-size:17px}
+h2{color:#8d1717;border-bottom:2px solid #e4c5a7;padding-bottom:8px;margin-top:28px}
+.product,.cart{background:white;padding:14px;margin:12px 0;border-radius:10px;box-shadow:0 2px 7px #0001}
+.product h3{margin:0 0 7px}
+.desc{font-size:14px;color:#766b63;margin-bottom:10px}
+.actions{display:flex;flex-wrap:wrap;gap:7px}
+button{background:#8d1717;color:white;border:0;border-radius:7px;padding:10px;cursor:pointer;font-weight:bold}
+button:hover{opacity:.85}
+input,select,textarea{width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:7px;font-size:15px}
+textarea{min-height:70px}
+.item{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #eee}
+.item span{flex:1}
 .remove{background:#555}
-.cart-row{display:flex;justify-content:space-between;gap:10px;margin:12px 0;border-bottom:1px solid #eee;padding-bottom:8px}
-footer{background:#29231f;color:white;text-align:center;padding:25px;line-height:2}
-footer a{color:white}
-.small{font-size:13px;color:#777}
+.total{font-size:21px;font-weight:bold;margin:16px 0}
+.submit{width:100%;background:#218838;padding:14px;font-size:17px}
+footer{background:#29211c;color:white;text-align:center;padding:25px;line-height:1.8;margin-top:30px}
 </style>
 </head>
 <body>
 
 <header>
-<img src="logo-nefeli.jpg" class="logo" alt="Πιτσαρία ΝΕΦΕΛΗ">
+<img src="logo-nefeli.jpg" alt="Λογότυπο ΝΕΦΕΛΗ">
+<h1>ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ</h1>
+<p>Καλώς ήρθατε!</p>
 </header>
 
-<div class="offer">🎉 4+1 ΔΩΡΕΑΝ ΣΤΙΣ ΠΙΤΣΕΣ!</div>
-
-<nav>
-<a href="#pizzas">Πίτσες</a>
-<a href="#salads">Σαλάτες</a>
-<a href="#pasta">Μακαρονάδες</a>
-<a href="#starters">Ορεκτικά</a>
-<a href="#drinks">Αναψυκτικά</a>
-<a href="#beers">Μπύρες</a>
-<a href="#cart">Καλάθι</a>
-</nav>
+<div class="offer">🍕 4+1 ΔΩΡΟ — ΜΟΝΟ ΣΤΙΣ ΠΙΤΣΕΣ!</div>
 
 <main>
+<h2>🍕 Πίτσες – Καλτσόνε – Πεϊνερλί</h2>
+<div id="pizzas"></div>
 
-<h2 id="pizzas">🍕 Πίτσες – Καλτσόνε – Πεϊνερλί</h2>
-<p>Οι πίτσες διατίθενται σε ατομικό και οικογενειακό μέγεθος. Τα καλτσόνε και τα πεϊνερλί διατίθενται μόνο σε οικογενειακό μέγεθος.</p>
-<div id="pizzaList"></div>
+<h2>🥗 Σαλάτες</h2><div id="salads"></div>
+<h2>🍝 Ζυμαρικά</h2><div id="pastas"></div>
+<h2>🍟 Ορεκτικά</h2><div id="starters"></div>
+<h2>🥤 Αναψυκτικά και μπύρες</h2><div id="drinks"></div>
 
-<h2 id="salads">🥗 Σαλάτες</h2>
-<div id="saladList"></div>
+<section class="cart">
+<h2>🛒 Το καλάθι μου</h2>
+<div id="cart">Το καλάθι είναι άδειο.</div>
+<div class="total" id="total">Σύνολο: 0,00 €</div>
+<p id="promoInfo"></p>
 
-<h2 id="pasta">🍝 Μακαρονάδες</h2>
-<p class="small">Όλες οι μακαρονάδες διατίθενται και στον φούρνο.</p>
-<div id="pastaList"></div>
-
-<h2 id="starters">🍟 Ορεκτικά – Μερίδες</h2>
-<div id="starterList"></div>
-
-<h2 id="drinks">🥤 Αναψυκτικά</h2>
-<div id="drinkList"></div>
-
-<h2 id="beers">🍺 Μπύρες</h2>
-<div id="beerList"></div>
-
-<section class="cart" id="cart">
-<h2>🛒 Το καλάθι σου</h2>
-<div id="cartItems">Το καλάθι είναι άδειο.</div>
-<p id="promoMessage"></p>
-<p class="total">Σύνολο: <span id="total">0,00 €</span></p>
-</section>
-
-<section class="order">
-<h2>📝 Παραγγελία</h2>
+<h2>📦 Στοιχεία παραγγελίας</h2>
 <form id="orderForm">
-<label>Ονοματεπώνυμο</label>
-<input id="customer" required placeholder="Το όνομά σου">
-
-<label>Τηλέφωνο</label>
-<input id="phone" type="tel" required placeholder="Το τηλέφωνό σου">
-
-<label>Τρόπος παραλαβής</label>
-<select id="delivery">
-<option value="Παραλαβή από το κατάστημα">Παραλαβή από το κατάστημα</option>
-<option value="Delivery">Delivery</option>
+<input id="customer" placeholder="Ονοματεπώνυμο" required>
+<input id="phone" type="tel" placeholder="Τηλέφωνο" required>
+<select id="delivery" required>
+<option value="">Τρόπος παραγγελίας</option>
+<option>Παραλαβή από το κατάστημα</option>
+<option>Delivery</option>
 </select>
-
-<div id="addressBox" hidden>
-<label>Διεύθυνση παράδοσης</label>
-<input id="address" placeholder="Οδός, αριθμός, περιοχή">
-</div>
-
-<label>Τρόπος πληρωμής</label>
-<select id="payment">
+<input id="address" placeholder="Διεύθυνση για delivery">
+<select id="payment" required>
+<option value="">Τρόπος πληρωμής</option>
 <option>Μετρητά</option>
-<option>Κάρτα κατά την παραλαβή</option>
+<option>Ηλεκτρονική πληρωμή</option>
 </select>
-
-<label>Σχόλια</label>
-<textarea id="notes" rows="3" placeholder="Σημειώσεις για την παραγγελία"></textarea>
-
-<button class="submit" type="submit">Ολοκλήρωση παραγγελίας</button>
-<p id="message"></p>
+<textarea id="notes" placeholder="Σχόλια"></textarea>
+<button class="submit" type="submit">Δημιουργία παραγγελίας</button>
 </form>
+<p style="font-size:13px;color:#766b63">
+Η αποστολή παραγγελίας και η ηλεκτρονική πληρωμή χρειάζονται σύνδεση με σύστημα καταστήματος και πάροχο πληρωμών. Αυτός ο κώδικας δημιουργεί προς το παρόν το κείμενο της παραγγελίας.
+</p>
 </section>
 </main>
 
 <footer>
-<strong>ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ</strong><br>
-<a href="tel:2681088719">☎ 26810 88719</a><br>
-<a href="tel:6971618144">☎ 6971618144</a><br>
-Συκούλα, Αιτωλοακαρνανίας
+<h2 style="color:white;border:0">ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ</h2>
+📍 Συκούλα, Αιτωλοακαρνανίας<br>
+☎ 26810 88719<br>
+☎ 6971618144
 </footer>
 
 <script>
 const pizzas=[
 ["Μαργαρίτα","Τυρί, σάλτσα ντομάτας",4,5.5],
-["Ζαμπόν – Τυρί","Τυρί, ζαμπόν, σάλτσα",4.5,6],
-["Τεμπέλη","Τυρί, πατάτες, σάλτσα",4.5,6],
-["Βεζούβιος","Τυρί, ντομάτα, κρεμμύδι, πιπεριά, Tabasco",4.5,6],
-["4 Τυριά","Mozzarella, φέτα, Regato, Gouda",4.5,6],
+["Ζαμπόν – Τυρί","Τυρί, ζαμπόν, σάλτσα ντομάτας",4.5,6],
+["Τεμπέλη","Τυρί, σάλτσα ντομάτας",4.5,6],
+["Βεζούβιος 🌶️","Ντομάτα, Κρανίδι, πιπεριά, Tabasco",4.5,6],
+["Τέσσερα Τυριά","Mozzarella, φέτα, Regato, Gouda",4.5,6],
 ["Χωριάτικη","Τυρί, φέτα, ελιές, ντομάτα, μανιτάρια, κρεμμύδι, πιπεριά",4.5,6],
 ["Μπολονέζ","Τυρί, φέτα, κιμάς",5.5,6.5],
-["Σπέσιαλ","Τυρί, ζαμπόν, μπέικον, μανιτάρια, πεπερόνι, πιπεριά",5.5,6.5],
-["Καρμπονάρα","Τυρί, ζαμπόν, μπέικον, σάλτσα",4.5,6],
-["Καρμπονάρα Λευκή","Τυρί, ζαμπόν, μπέικον, κρέμα γάλακτος",4.5,6],
+["Σπέσιαλ","Τυρί, ζαμπόν, μανιτάρια, πιπεριά, πεπερόνι, μπέικον",5.5,6.5],
+["Καρμπονάρα","Τυρί, ζαμπόν, μπέικον, κρέμα γάλακτος",4.5,6],
+["Καρμπονάρα Λευκή","Τυρί, ζαμπόν, μπέικον, κρέμα γάλακτος, χωρίς σάλτσα ντομάτας",4.5,6],
 ["BBQ","Σάλτσα BBQ, κοτομπουκιές, μπέικον",5.5,6.5]
 ];
 
 const salads=[
 ["Ceasar’s","Μαρούλι, ντοματίνια, παρμεζάνα, κοτόπουλο, κρουτόν",4.5],
-["Μακαρονοσαλάτα","Πένες, καλαμπόκι, πιπεριά, ζαμπόν, σως",4],
+["Μακαρονοσαλάτα","Πέννες, καλαμπόκι, πιπεριά, ζαμπόν, σως",4],
 ["Τονοσαλάτα","Μαρούλι, καλαμπόκι, τόνος, dressing",4.5],
 ["Σαλάτα Chef","Μαρούλι, ντοματίνια, αγγούρι, τυρί, ζαμπόν, αυγό, σως",4.5],
-["Ρόκα Παρμεζάνα","Ρόκα, ντοματίνια, παρμεζάνα, κρέμα βαλσάμικο",4]
+["Ρόκα Παρμεζάνα","Ρόκα, ντοματίνια, παρμεζάνα, κρέμα βαλσάμικου",4]
 ];
 
 const pastas=[
 ["Ναπολιτάνα","Σάλτσα ντομάτας",4.5],
 ["Μπολονέζ","Κιμάς",5.5],
-["Κοτόπουλο με παρμεζάνα","Μακαρονάδα με κοτόπουλο και παρμεζάνα",5.5],
+["Μακαρονάδα με κοτόπουλο και παρμεζάνα","",5.5],
 ["Καρμπονάρα","",5.5],
 ["Ροζέ","Τυρί, ζαμπόν, μπέικον, σάλτσα ντομάτας, κρέμα γάλακτος",5]
 ];
@@ -158,169 +123,151 @@ const starters=[
 ["Σκορδόψωμο","Τυρί, πάστα σκόρδου",3.5],
 ["Σκορδόψωμο σκεπαστό","",3],
 ["Σκορδόψωμο με φέτα","Τυρί, φέτα, ντομάτα, πάστα σκόρδου, ρίγανη",4],
-["Φέτα σαγανάκι","Φύλλο κρούστας, τυρί φέτα",4],
-["Κοτομπουκιές","Σερβίρονται με πατάτες",4.5],
+["Φέτα σαγανάκι","Φύλλο, φέτα",4],
+["Κοτομπουκιές","Με πατάτες",4.5],
 ["Πατάτες τηγανητές","",3],
 ["Πατάτες με cheddar και bacon","",4],
 ["Πατάτες με κιμά","",3.5]
 ];
 
 const drinks=[
-["Coca-Cola 330ml",1.5],
-["Coca-Cola 500ml",2],
-["Coca-Cola Zero 330ml",1.5],
-["Coca-Cola Zero 500ml",2],
-["Sprite 330ml",1.5],
-["Πορτοκαλάδα χωρίς ανθρακικό 330ml",1.5],
-["Λεμονάδα 330ml",1.5],
-["Σόδα 330ml",1.5]
+["Coca-Cola 330ml","",1.5],["Coca-Cola 500ml","",2],
+["Coca-Cola Zero 330ml","",1.5],["Coca-Cola Zero 500ml","",2],
+["Sprite 330ml","",1.5],["Πορτοκαλάδα 330ml","",1.5],
+["Λεμονάδα 330ml","",1.5],["Σόδα 330ml","",1.5],
+["Heineken 330ml","",2.3],["Kaiser 330ml","",2.3],
+["Fix Άνευ 330ml","",2.3],["Άλφα 500ml","",2.5],
+["Amstel 500ml","",2.5],["Βεργίνα 500ml","",2.5]
 ];
 
-const beers=[
-["Μπύρα 330ml (Heineken, Kaiser, Fix Άνευ)",2.3],
-["Μπύρα 500ml (Άλφα, Amstel, Βεργίνα)",2.5]
-];
+const cart=[];
+const money=n=>n.toFixed(2).replace(".",",")+" €";
 
-let cart=[];
-
-const money=n=>n.toLocaleString("el-GR",{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-})+" €";
-
-function showPizzas(){
- document.getElementById("pizzaList").innerHTML=pizzas.map((p,i)=>`
- <article class="item">
- <h3>${p[0]}</h3>
- <div class="desc">${p[1]}</div>
-
- <div class="actions">
- <button onclick="addPizza(${i},'Πίτσα',0)">
- Πίτσα Ατομική ${money(p[2])}
- </button>
- <button onclick="addPizza(${i},'Πίτσα',1)">
- Πίτσα Οικογενειακή ${money(p[3])}
- </button>
- </div>
-
- <div class="actions">
- <button onclick="addPizza(${i},'Καλτσόνε',1)">
- Καλτσόνε Οικογενειακό ${money(p[3])}
- </button>
- <button onclick="addPizza(${i},'Πεϊνερλί',1)">
- Πεϊνερλί Οικογενειακό ${money(p[3])}
- </button>
- </div>
- </article>
- `).join("");
+function add(name,type,size,price,eligible=false){
+ cart.push({name,type,size,price,eligible});
+ drawCart();
 }
 
-function showSimple(list,id){
- document.getElementById(id).innerHTML=list.map((p,i)=>`
- <article class="item">
- <h3>${p[0]}</h3>
- <div class="desc">${p[1]||""}</div>
- <div class="price">${money(p[2])}</div>
- <button onclick="addSimple('${id}',${i})">Προσθήκη</button>
- </article>
- `).join("");
+function productCard(name,desc){
+ const box=document.createElement("div");
+ box.className="product";
+ const h=document.createElement("h3");h.textContent=name;box.appendChild(h);
+ if(desc){
+  const p=document.createElement("div");p.className="desc";
+  p.textContent=desc;box.appendChild(p);
+ }
+ return box;
 }
 
-function showDrinks(list,id){
- document.getElementById(id).innerHTML=list.map((p,i)=>`
- <article class="item">
- <h3>${p[0]}</h3>
- <div class="price">${money(p[1])}</div>
- <button onclick="addDrink('${id}',${i})">Προσθήκη</button>
- </article>
- `).join("");
-}
-
-function addPizza(i,type,size){
- const p=pizzas[i];
- cart.push({
- name:type+" "+p[0],
- size:type==="Πίτσα"?(size===0?"Ατομική":"Οικογενειακή"):"Οικογενειακό",
- price:size===0?p[2]:p[3],
- pizza:true
+pizzas.forEach(p=>{
+ const box=productCard(p[0],p[1]);
+ const actions=document.createElement("div");actions.className="actions";
+ [
+  ["Πίτσα","Ατομική",p[2],true],
+  ["Πίτσα","Οικογενειακή",p[3],true],
+  ["Καλτσόνε","Οικογενειακό",p[3],false],
+  ["Πεϊνερλί","Οικογενειακό",p[3],false]
+ ].forEach(c=>{
+  const b=document.createElement("button");
+  b.textContent=c[0]+" "+c[1]+" · "+money(c[2]);
+  b.onclick=()=>add(p[0],c[0],c[1],c[2],c[3]);
+  actions.appendChild(b);
  });
- renderCart();
+ box.appendChild(actions);
+ document.getElementById("pizzas").appendChild(box);
+});
+
+function renderSimple(items,id,type){
+ items.forEach(p=>{
+  const box=productCard(p[0],p[1]);
+  const b=document.createElement("button");
+  b.textContent="Προσθήκη · "+money(p[2]);
+  b.onclick=()=>add(p[0],type,"",p[2],false);
+  box.appendChild(b);
+  document.getElementById(id).appendChild(box);
+ });
 }
 
-function addSimple(id,i){
- const list=id==="saladList"?salads:
- id==="pastaList"?pastas:starters;
- cart.push({name:list[i][0],price:list[i][2],pizza:false});
- renderCart();
+function freeIndexes(){
+ const eligible=cart.map((x,i)=>({x,i})).filter(a=>a.x.eligible);
+ const count=Math.floor(eligible.length/5);
+ return eligible.slice(0,count).map(a=>a.i);
 }
 
-function addDrink(id,i){
- const list=id==="drinkList"?drinks:beers;
- cart.push({name:list[i][0],price:list[i][1],pizza:false});
- renderCart();
+function drawCart(){
+ const area=document.getElementById("cart");
+ area.innerHTML="";
+ const free=freeIndexes();
+ let total=0;
+ if(!cart.length)area.textContent="Το καλάθι είναι άδειο.";
+ cart.forEach((x,i)=>{
+  const row=document.createElement("div");row.className="item";
+  const label=document.createElement("span");
+  const isFree=free.includes(i);
+  label.textContent=x.type+" "+x.name+
+   (x.size?" ("+x.size+")":"")+" — "+
+   (isFree?"ΔΩΡΕΑΝ":money(x.price));
+  if(!isFree)total+=x.price;
+  const b=document.createElement("button");b.className="remove";
+  b.textContent="Χ";
+  b.onclick=()=>{cart.splice(i,1);drawCart();};
+  row.append(label,b);area.appendChild(row);
+ });
+ document.getElementById("total").textContent="Σύνολο: "+money(total);
+ document.getElementById("promoInfo").textContent=
+  "Κανονικές πίτσες: "+cart.filter(x=>x.eligible).length+
+  " · Δωρεάν πίτσες: "+free.length+
+  ". Η προσφορά δεν ισχύει για καλτσόνε ή πεϊνερλί.";
 }
 
-function removeItem(i){
- cart.splice(i,1);
- renderCart();
-}
-
-function renderCart(){
- let pizzaNumber=0,total=0,free=0;
-
- const html=cart.map((x,i)=>{
- const isFree=x.pizza && (++pizzaNumber%5===0);
-
- if(isFree)free++;
- else total+=x.price;
-
- return `
- <div class="cart-row">
- <span>${x.name} ${x.size||""} — ${isFree?"🎁 ΔΩΡΕΑΝ":money(x.price)}</span>
- <button class="remove" onclick="removeItem(${i})">✕</button>
- </div>`;
- }).join("");
-
- document.getElementById("cartItems").innerHTML=
- html||"Το καλάθι είναι άδειο.";
-
- document.getElementById("total").textContent=money(total);
-
- document.getElementById("promoMessage").textContent=
- free?"🎉 Εφαρμόστηκε η προσφορά 4+1!":
- "Η προσφορά ισχύει μόνο στις πίτσες.";
-}
-
-showPizzas();
-showSimple(salads,"saladList");
-showSimple(pastas,"pastaList");
-showSimple(starters,"starterList");
-showDrinks(drinks,"drinkList");
-showDrinks(beers,"beerList");
-renderCart();
+renderSimple(salads,"salads","Σαλάτα");
+renderSimple(pastas,"pastas","Ζυμαρικό");
+renderSimple(starters,"starters","Ορεκτικό");
+renderSimple(drinks,"drinks","Ποτό");
 
 document.getElementById("delivery").addEventListener("change",e=>{
- const yes=e.target.value==="Delivery";
- document.getElementById("addressBox").hidden=!yes;
- document.getElementById("address").required=yes;
+ document.getElementById("address").required=e.target.value==="Delivery";
 });
 
 document.getElementById("orderForm").addEventListener("submit",e=>{
  e.preventDefault();
-
- if(!cart.length){
- document.getElementById("message").textContent=
- "Πρόσθεσε πρώτα προϊόντα στο καλάθι.";
- return;
+ if(!cart.length){alert("Το καλάθι είναι άδειο!");return;}
+ const free=freeIndexes();
+ let total=0;
+ const lines=cart.map((x,i)=>{
+  const freeItem=free.includes(i);
+  if(!freeItem)total+=x.price;
+  return x.type+" "+x.name+" "+x.size+" — "+(freeItem?"ΔΩΡΕΑΝ":money(x.price));
+ });
+ const message=[
+  "ΠΑΡΑΓΓΕΛΙΑ ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ",
+  "Όνομα: "+document.getElementById("customer").value,
+  "Τηλέφωνο: "+document.getElementById("phone").value,
+  "Τρόπος: "+document.getElementById("delivery").value,
+  "Διεύθυνση: "+document.getElementById("address").value,
+  "Πληρωμή: "+document.getElementById("payment").value,
+  "",
+  ...lines,
+  "ΣΥΝΟΛΟ: "+money(total),
+  "Σχόλια: "+document.getElementById("notes").value
+ ].join("\n");
+ const win=window.open("","_blank");
+ if(win){
+  const pre=win.document.createElement("pre");
+  pre.textContent=message;
+  pre.style.whiteSpace="pre-wrap";
+  pre.style.padding="20px";
+  win.document.body.appendChild(pre);
+  const copy=win.document.createElement("button");
+  copy.textContent="Αντιγραφή παραγγελίας";
+  copy.style.padding="12px";
+  copy.onclick=()=>navigator.clipboard.writeText(message);
+  win.document.body.appendChild(copy);
+ }else{
+  alert("Επίτρεψε τα αναδυόμενα παράθυρα και ξαναδοκίμασε.");
  }
-
- document.getElementById("message").textContent=
- "Η φόρμα είναι δοκιμαστική. Δεν έχει σταλεί ακόμη πραγματική παραγγελία. Χρειάζεται σύνδεση με ασφαλές σύστημα παραγγελιών.";
 });
 </script>
 </body>
 </html>
-
-
-
 
