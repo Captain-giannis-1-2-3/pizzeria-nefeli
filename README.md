@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <header>
 <img src="FB_IMG_1792954368125.jpg" alt="Λογότυπο ΝΕΦΕΛΗ">
 <h1>ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ</h1>
