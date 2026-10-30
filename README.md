@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Πιτσαρία ΝΕΦΕΛΗ</title>
+<title>Πιτσαρία Καφέ ΝΕΦΕΛΗ</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#fff8ef;color:#29211c;font-family:Arial,sans-serif}
@@ -34,7 +34,7 @@ footer{background:#29211c;color:white;text-align:center;padding:25px;line-height
 
 <header>
 <img src="FB_IMG_1792954368125.jpg" alt="Λογότυπο ΝΕΦΕΛΗ">
-<h1>ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ</h1>
+<h1>ΠΙΤΣΑΡΙΑ Καφέ ΝΕΦΕΛΗ</h1>
 <p>Καλώς ήρθατε!</p>
 </header>
 
