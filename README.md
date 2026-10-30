@@ -164,8 +164,8 @@ pizzas.forEach(p=>{
  [
   ["Πίτσα","Ατομική",p[2],true],
   ["Πίτσα","Οικογενειακή",p[3],true],
-  ["Καλτσόνε","Οικογενειακό",p[3],false],
-  ["Πεϊνερλί","Οικογενειακό",p[3],false]
+  ["Καλτσόνε","Οικογενειακό",p[3],true],
+  ["Πεϊνερλί","Οικογενειακό",p[3],true]
  ].forEach(c=>{
   const b=document.createElement("button");
   b.textContent=c[0]+" "+c[1]+" · "+money(c[2]);
@@ -259,7 +259,7 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
   win.document.body.appendChild(pre);
   const copy=win.document.createElement("button");
   copy.textContent="Αντιγραφή παραγγελίας";
-  copy.style.padding="12px";
+  copy.style.padding="155px";
   copy.onclick=()=>navigator.clipboard.writeText(message);
   win.document.body.appendChild(copy);
  }else{
