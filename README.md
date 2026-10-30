@@ -38,7 +38,7 @@ footer{background:#29211c;color:white;text-align:center;padding:25px;line-height
 <p>Καλώς ήρθατε!</p>
 </header>
 
-<div class="offer">🍕 4+1 ΔΩΡΟ — ΜΟΝΟ ΣΤΙΣ ΠΙΤΣΕΣ!</div>
+<div class="offer">🍕 4+1 ΔΩΡΟ !</div>
 
 <main>
 <h2>🍕 Πίτσες – Καλτσόνε – Πεϊνερλί</h2>
