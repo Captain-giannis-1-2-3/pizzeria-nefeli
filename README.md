@@ -1,4 +1,27 @@
 
+<header class="logo-header">
+  <img
+    src="logo-nefeli.jpg"
+    alt="Λογότυπο Πιτσαρίας ΝΕΦΕΛΗ"
+    class="logo"
+  >
+</header>
+
+.logo-header {
+  background: #000;
+  padding: 15px;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: auto;
+  border-radius: 8px;
+}
+
 
 <html lang="el">
 <head>
