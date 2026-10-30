@@ -1,7 +1,7 @@
 
 <header class="logo-header">
   <img
-    src="logo-nefeli.jpg"
+    src="FB_IMG_1792954368125.jpg"
     alt="Λογότυπο Πιτσαρίας ΝΕΦΕΛΗ"
     class="logo"
   >
