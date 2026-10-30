@@ -3,33 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Πιτσαρία ΝΕΦΕΛΗ</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#fff8ef;color:#29211c;font-family:Arial,sans-serif}
-header{background:#8d1717;color:white;text-align:center;padding:22px}
-header img{width:145px;max-height:125px;object-fit:contain;background:white;padding:5px;border-radius:10px}
-header h1{margin:12px 0 5px}
-.offer{background:#ffcf45;text-align:center;padding:14px;font-weight:bold;font-size:19px}
-main{max-width:850px;margin:auto;padding:15px}
-h2{color:#8d1717;border-bottom:2px solid #e4c5a7;padding-bottom:8px;margin-top:28px}
-.product,.cart{background:white;padding:14px;margin:12px 0;border-radius:10px;box-shadow:0 2px 7px #0001}
-.product h3{margin:0 0 7px}
-.desc{font-size:14px;color:#766b63;margin-bottom:10px}
-.actions{display:flex;flex-wrap:wrap;gap:7px}
-button{background:#8d1717;color:white;border:0;border-radius:7px;padding:10px;cursor:pointer;font-weight:bold}
-button:hover{opacity:.85}
-input,select,textarea{width:100%;padding:12px;margin:7px 0;border:1px solid #ccc;border-radius:7px;font-size:15px}
-textarea{min-height:70px}
-.item{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #eee}
-.item span{flex:1}
-.remove{background:#555}
-.total{font-size:21px;font-weight:bold;margin:16px 0}
-.submit{width:100%;background:#218838;padding:14px;font-size:17px}
-footer{background:#29211c;color:white;text-align:center;padding:25px;line-height:1.8;margin-top:30px}
-</style>
-</head>
-<body>
 
 <header>
 <img src="FB_IMG_1792954368125.jpg" alt="Λογότυπο ΝΕΦΕΛΗ">
