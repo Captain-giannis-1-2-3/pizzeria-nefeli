@@ -1,26 +1,4 @@
 
-<header class="logo-header">
-  <img
-    src="FB_IMG_1792954368125.jpg"
-    alt="Λογότυπο Πιτσαρίας ΝΕΦΕΛΗ"
-    class="logo"
-  >
-</header>
-
-.logo-header {
-  background: #000;
-  padding: 15px;
-  text-align: center;
-}
-
-.logo {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  margin: auto;
-  border-radius: 8px;
-}
 
 
 <html lang="el">
