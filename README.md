@@ -4,7 +4,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Πιτσαρία ΝΕΦΕΛΗ</title>
+
+<header class="logo-header">
+  <img
+    src="logo-nefeli.jpg"
+    alt="Λογότυπο Πιτσαρίας ΝΕΦΕΛΗ"
+    class="logo"
+  >
+</header>
+
+.logo-header {
+  background: #000;
+  padding: 15px;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: auto;
+  border-radius: 8px;
+}
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#fff8ef;color:#29231f}
