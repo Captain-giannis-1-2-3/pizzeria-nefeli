@@ -8,7 +8,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:#fff8ef;color:#29211c;font-family:Arial,sans-serif}
 header{background:#8d1717;color:white;text-align:center;padding:22px}
-header img{width:145px;max-height:125px;object-fit:contain;background:white;padding:5px;border-radius:10px}
+header img{width:190px;max-height:150px;object-fit:contain;background:white;padding:0px;border-radius:0px}
 header h1{margin:12px 0 5px}
 .offer{background:#ffcf45;text-align:center;padding:14px;font-weight:bold;font-size:19px}
 main{max-width:850px;margin:auto;padding:15px}
