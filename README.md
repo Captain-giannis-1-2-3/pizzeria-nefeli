@@ -269,7 +269,7 @@ document.getElementById("orderForm").addEventListener("submit", async e => {
         free: isFree
       };
     });
-
+alert("Η φόρμα λειτουργεί!");
     const deliveryValue =
       document.getElementById("delivery").value;
 
