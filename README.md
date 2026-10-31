@@ -1,4 +1,15 @@
  
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "ΒΑΛΕ_ΕΔΩ_PROJECT_URL";https://ehngprmfejfvhawpxlqx.supabase.co
+const SUPABASE_KEY = "ΒΑΛΕ_ΕΔΩ_PUBLISHABLE_KEY";sb_publishable_QCfaXHe94oDEBAlJ2f36TQ_FQFPV1oZ
+
+const db = window.supabase.createClient(
+  SUPABASE_URL, 
+  SUPABASE_KEY
+);
+</script>
+
 <html lang="el">
 <head>
 <meta charset="UTF-8">
@@ -228,16 +239,83 @@ document.getElementById("delivery").addEventListener("change",e=>{
  document.getElementById("address").required=e.target.value==="Delivery";
 });
 
-document.getElementById("orderForm").addEventListener("submit",e=>{
- e.preventDefault();
- if(!cart.length){alert("Το καλάθι είναι άδειο!");return;}
- const free=freeIndexes();
- let total=0;
- const lines=cart.map((x,i)=>{
-  const freeItem=free.includes(i);
-  if(!freeItem)total+=x.price;
-  return x.type+" "+x.name+" "+x.size+" — "+(freeItem?"ΔΩΡΕΑΝ":money(x.price));
- });
+
+document.getElementById("orderForm").addEventListener("submit", async e => {
+  e.preventDefault();
+
+  if (!cart.length) {
+    alert("Το καλάθι είναι άδειο!");
+    return;
+  }
+
+  const button = e.target.querySelector('button[type="submit"]');
+  button.disabled = true;
+  button.textContent = "Αποστολή...";
+
+  try {
+    const free = freeIndexes();
+    let total = 0;
+
+    const items = cart.map((x, i) => {
+      const isFree = free.includes(i);
+      if (!isFree) total += x.price;
+
+      return {
+        name: x.name,
+        type: x.type,
+        size: x.size,
+        price: isFree ? 0 : x.price,
+        original_price: x.price,
+        free: isFree
+      };
+    });
+
+    const deliveryValue =
+      document.getElementById("delivery").value;
+
+    const paymentValue =
+      document.getElementById("payment").value;
+
+    const order = {
+      customer_name: document.getElementById("customer").value.trim(),
+      customer_phone: document.getElementById("phone").value.trim(),
+      order_type: deliveryValue === "Delivery" ? "delivery" : "pickup",
+      delivery_address:
+        deliveryValue === "Delivery"
+          ? document.getElementById("address").value.trim()
+          : null,
+      payment_method:
+        paymentValue === "Μετρητά" ? "cash" : "electronic",
+      items: items,
+      total: Number(total.toFixed(2)),
+      notes: document.getElementById("notes").value.trim(),
+      status: "new"
+    };
+
+    const { data, error } = await db
+      .from("orders")
+      .insert(order)
+      .select("id")
+      .single();
+
+    if (error) throw error;
+
+    alert("Η παραγγελία καταχωρήθηκε επιτυχώς!");
+
+    cart.length = 0;
+    drawCart();
+    e.target.reset();
+    document.getElementById("address").required = false;
+
+  } catch (error) {
+    console.error("Order error:", error);
+    alert("Δεν έγινε η αποστολή. Έλεγξε τη σύνδεση και δοκίμασε ξανά.");
+  } finally {
+    button.disabled = false;
+    button.textContent = "Δημιουργία παραγγελίας";
+  }
+});
+ 
  const message=[
   "ΠΑΡΑΓΓΕΛΙΑ ΠΙΤΣΑΡΙΑ ΝΕΦΕΛΗ",
   "Όνομα: "+document.getElementById("customer").value,
